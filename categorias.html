@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Categorías - MS47</title>
+
+<style>
+body{
+    background:#0e0e0e;
+    color:white;
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:40px 20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+/* GRID MÁS CHICO Y PROLIJO */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:#1b1b1b;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px black;
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.card h3{
+    padding:10px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎮 Categorías</h1>
+
+<div class="grid">
+
+    <!-- TERROR -->
+    <div class="card" onclick="window.location.href='terror.html'">
+        <img src="https://img.youtube.com/vi/8zIDzPJnzpY/hqdefault.jpg">
+        <h3>👻 Terror</h3>
+    </div>
+
+    <!-- MUNDO ABIERTO -->
+    <div class="card" onclick="window.location.href='mundo-abierto.html'">
+        <img src="https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg">
+        <h3>🌍 Mundo Abierto</h3>
+    </div>
+
+    <!-- PROGRAMAS -->
+    <div class="card" onclick="window.location.href='programas.html'">
+        <img src="https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg">
+        <h3>💻 Programas</h3>
+    </div>
+
+    <!-- ACCION -->
+    <div class="card" onclick="window.location.href='accion.html'">
+        <img src="https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg">
+        <h3>🔥 Acción</h3>
+    </div>
+
+</div>
+
+</body>
+</html>
