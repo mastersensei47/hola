@@ -1,197 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MS47 - Inicio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorías</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    /* Banner */
+    .banner {
+      background: url("ms47.jpg") center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .banner h1 {
+      position: relative;
+      font-size: 60px;
+      font-weight: 900;
+      color: #ff2e2e;
+      text-shadow: 0 0 20px #ff0000;
+    }
 
-<style>
-body{
-    margin:0;
-    font-family:'Montserrat',sans-serif;
-    background:#0f0f0f;
-    color:white;
-}
+    /* Sección de categorías */
+    .categorias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .categoria {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .categoria:hover {
+      transform: translateY(-5px);
+    }
+    .categoria img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .categoria h2 {
+      margin: 15px;
+      font-size: 20px;
+      color: #222;
+    }
 
-/* ====== BANNER ====== */
-.banner{
-    background:url("ms47.jpg") center/cover no-repeat;
-    height:300px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-}
+    /* Redes */
+    .redes {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .redes a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ff2e2e;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .redes a:hover {
+      color: #333;
+    }
 
-.banner::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.6);
-}
-
-.banner h1{
-    position:relative;
-    font-size:60px;
-    font-weight:900;
-    color:#ff2e2e;
-    text-shadow:0 0 20px #ff0000;
-}
-
-/* ===== REDES ===== */
-.redes{
-    text-align:center;
-    margin:25px 0;
-}
-
-.redes a{
-    display:inline-block;
-    margin:10px;
-    padding:12px 25px;
-    background:#ff2e2e;
-    border-radius:30px;
-    color:white;
-    text-decoration:none;
-    font-weight:700;
-    transition:0.3s;
-}
-
-.redes a:hover{
-    background:white;
-    color:#ff2e2e;
-}
-
-/* ===== CATEGORIAS ===== */
-.categorias{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 20px;
-}
-
-.categorias h2{
-    text-align:center;
-    margin-bottom:40px;
-    font-size:35px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:#1c1c1c;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:0.4s;
-    text-align:center;
-}
-
-.card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.card h3{
-    padding:15px;
-}
-
-.card:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 25px #ff2e2e;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    text-align:center;
-    padding:30px;
-    background:#111;
-    margin-top:40px;
-    font-size:14px;
-    color:#aaa;
-}
-</style>
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="banner">
-    <h1>mastersensei47</h1>
-</div>
+  <div class="banner">
+    <h1>Categorías</h1>
+  </div>
 
-<div class="redes">
-    <a href="#">Instagram</a>
-    <a href="#">TikTok</a>
-    <a href="#">YouTube</a>
-</div>
-
-<section class="categorias">
-    <h2>🎮 Categorías</h2>
-
-    <div class="grid">
-
-        <div class="card" onclick="location.href='Minecraft.html'">
-            <img src="minecraft.jpg">
-            <h3>Minecraft & Versiones</h3>
-        </div>
-
-        <div class="card" onclick="location.href='deportes.html'">
-            <img src="deportes.jpg">
-            <h3>Deportes</h3>
-        </div>
-
-        <div class="card" onclick="location.href='aventura.html'">
-            <img src="aventura.jpg">
-            <h3>Aventura</h3>
-        </div>
-
-        <div class="card" onclick="location.href='retro.html'">
-            <img src="retro.jpg">
-            <h3>Retro & Clásicos</h3>
-        </div>
-
-        <div class="card" onclick="location.href='online.html'">
-            <img src="online.jpg">
-            <h3>Juegos Online</h3>
-        </div>
-
-        <div class="card" onclick="location.href='simulacion.html'">
-            <img src="simulacion.jpg">
-            <h3>Simulación</h3>
-        </div>
-
-        <div class="card" onclick="location.href='programas.html'">
-            <img src="programas.jpg">
-            <h3>Programas & Utilidades</h3>
-        </div>
-
-        <div class="card" onclick="location.href='mundoabierto.html'">
-            <img src="mundo.jpg">
-            <h3>Mundo Abierto</h3>
-        </div>
-
-        <div class="card" onclick="location.href='terror.html'">
-            <img src="terror.jpg">
-            <h3>Terror</h3>
-        </div>
-
-        <div class="card" onclick="location.href='dinosaurios.html'">
-            <img src="dino.jpg">
-            <h3>Dinosaurios</h3>
-        </div>
-
+  <section class="categorias">
+    <div class="categoria">
+      <img src="aventura.jpg" alt="Aventura">
+      <h2>Aventura</h2>
     </div>
-</section>
+    <div class="categoria">
+      <img src="deportes.jpg" alt="Deportes">
+      <h2>Deportes</h2>
+    </div>
+    <div class="categoria">
+      <img src="terror.jpg" alt="Terror">
+      <h2>Terror</h2>
+    </div>
+    <!-- Agrega más categorías aquí -->
+  </section>
 
-<footer>
-© 2026 mastersensei47 - Todos los derechos reservados
-</footer>
+  <div class="redes">
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Todos los derechos reservados</p>
+  </footer>
 
 </body>
 </html>
-
