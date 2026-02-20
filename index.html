@@ -34,24 +34,18 @@ body{
     transform:translateY(0);
 }
 
-/* ZONA SUPERIOR */
-.zona-superior{
+/* ===== SECCION HERO (VIDEOS + TITULO) ===== */
+.hero{
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     gap:40px;
-    padding:60px 20px;
+    padding:80px 20px 40px 20px;
     flex-wrap:wrap;
 }
 
-.titulo-centro h1{
-    font-size:48px;
-    text-shadow:0 0 10px red,0 0 25px red;
-}
-
-/* VIDEOS RESPONSIVE */
 .video{
-    width:350px;
+    width:360px;
     aspect-ratio:16/9;
 }
 
@@ -59,13 +53,24 @@ body{
     width:100%;
     height:100%;
     border-radius:15px;
-    box-shadow:0 0 20px red;
+    box-shadow:0 0 25px red;
 }
 
-/* BOTONES DESCARGA */
+.titulo{
+    text-align:center;
+    min-width:300px;
+}
+
+.titulo h1{
+    font-size:48px;
+    text-shadow:0 0 15px red,0 0 30px red;
+    margin-bottom:20px;
+}
+
+/* BOTONES */
 .descargas{
     text-align:center;
-    margin-top:30px;
+    margin-top:10px;
 }
 
 .boton{
@@ -86,10 +91,10 @@ body{
     box-shadow:0 0 20px red;
 }
 
-/* GALERIA */
+/* ===== CAPTURAS ===== */
 .capturas{
     text-align:center;
-    margin:80px 0;
+    margin:100px 0;
 }
 
 .galeria{
@@ -97,6 +102,7 @@ body{
     justify-content:center;
     gap:20px;
     flex-wrap:wrap;
+    margin-top:20px;
 }
 
 .galeria img{
@@ -111,7 +117,7 @@ body{
     box-shadow:0 0 20px red;
 }
 
-/* MODAL PANTALLA COMPLETA */
+/* MODAL */
 .modal{
     display:none;
     position:fixed;
@@ -119,7 +125,7 @@ body{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.9);
+    background:rgba(0,0,0,0.95);
     justify-content:center;
     align-items:center;
     z-index:999;
@@ -130,7 +136,7 @@ body{
     max-height:90%;
 }
 
-/* INDICACIONES */
+/* ===== INDICACIONES ===== */
 .indicaciones{
     background:rgba(0,0,0,0.6);
     padding:40px;
@@ -140,14 +146,35 @@ body{
     text-align:center;
 }
 
-.indicaciones li{
-    list-style:none;
-    margin:10px 0;
+/* ===== REDES ===== */
+.redes{
+    text-align:center;
+    padding:40px 20px;
+    background:rgba(0,0,0,0.7);
+}
+
+.redes h2{
+    margin-bottom:20px;
+}
+
+.redes a{
+    display:inline-block;
+    margin:10px 20px;
+    font-size:20px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.redes a:hover{
+    color:#ff0000;
+    text-shadow:0 0 10px red;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .zona-superior{
+    .hero{
         flex-direction:column;
     }
 }
@@ -156,16 +183,22 @@ body{
 
 <body>
 
-<!-- ZONA SUPERIOR -->
-<div class="zona-superior animar">
+<!-- HERO -->
+<section class="hero animar">
 
     <div class="video">
         <iframe src="https://www.youtube.com/embed/ID_VIDEO_1"
         frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <div class="titulo-centro">
+    <div class="titulo">
         <h1>DESCARGA MS47</h1>
+
+        <div class="descargas">
+            <a href="LINK_1" class="boton" target="_blank">⬇ Parte 1</a>
+            <a href="LINK_2" class="boton" target="_blank">⬇ Parte 2</a>
+            <a href="LINK_3" class="boton" target="_blank">⬇ Parte 3</a>
+        </div>
     </div>
 
     <div class="video">
@@ -173,27 +206,20 @@ body{
         frameborder="0" allowfullscreen></iframe>
     </div>
 
-</div>
-
-<!-- BOTONES DESCARGA -->
-<div class="descargas animar">
-    <a href="LINK_MEDIAFIRE_1" class="boton" target="_blank">⬇ Parte 1</a>
-    <a href="LINK_MEDIAFIRE_2" class="boton" target="_blank">⬇ Parte 2</a>
-    <a href="LINK_MEDIAFIRE_3" class="boton" target="_blank">⬇ Parte 3</a>
-</div>
+</section>
 
 <!-- CAPTURAS -->
-<div class="capturas animar">
+<section class="capturas animar">
     <h2>Capturas del Juego</h2>
     <div class="galeria">
         <img src="captura1.jpg" onclick="abrirModal(this.src)">
         <img src="captura2.jpg" onclick="abrirModal(this.src)">
         <img src="captura3.jpg" onclick="abrirModal(this.src)">
     </div>
-</div>
+</section>
 
 <!-- INDICACIONES -->
-<div class="indicaciones animar">
+<section class="indicaciones animar">
     <h2>Indicaciones</h2>
     <ul>
         <li>✔ Extraer con WinRAR</li>
@@ -201,7 +227,15 @@ body{
         <li>✔ Desactivar antivirus temporalmente</li>
         <li>✔ Disfrutar el juego</li>
     </ul>
-</div>
+</section>
+
+<!-- REDES -->
+<section class="redes animar">
+    <h2>Mis Redes</h2>
+    <a href="https://youtube.com/" target="_blank">YouTube</a>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/" target="_blank">TikTok</a>
+</section>
 
 <!-- MODAL -->
 <div class="modal" id="modal" onclick="cerrarModal()">
@@ -209,7 +243,6 @@ body{
 </div>
 
 <script>
-// MODAL
 function abrirModal(src){
     document.getElementById("modal").style.display="flex";
     document.getElementById("imagenModal").src=src;
@@ -218,7 +251,6 @@ function cerrarModal(){
     document.getElementById("modal").style.display="none";
 }
 
-// ANIMACION SCROLL
 const elementos=document.querySelectorAll(".animar");
 window.addEventListener("scroll",()=>{
     elementos.forEach(el=>{
