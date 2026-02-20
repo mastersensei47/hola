@@ -9,8 +9,8 @@
 body{
     margin:0;
     background:#0f0f0f;
-    font-family:Arial, sans-serif;
     color:white;
+    font-family:Arial, sans-serif;
 }
 
 /* HEADER */
@@ -27,7 +27,7 @@ header{
     z-index:1000;
 }
 
-/* BOTON VOLVER */
+/* BOTÓN VOLVER */
 .volver{
     position:absolute;
     left:15px;
@@ -44,17 +44,17 @@ header{
     margin:auto;
 }
 
-/* GRID */
+/* GRID DE VIDEOS */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:20px;
 }
 
 /* CARD */
 .card{
-    background:#1a1a1a;
-    border-radius:10px;
+    background:#1b1b1b;
+    border-radius:8px;
     overflow:hidden;
     cursor:pointer;
     transition:0.3s;
@@ -74,18 +74,6 @@ header{
     padding:10px;
     font-size:14px;
 }
-
-/* ANIMACION */
-.fade{
-    opacity:0;
-    transform:translateY(20px);
-    transition:0.6s;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
 </style>
 </head>
 
@@ -97,11 +85,13 @@ header{
 </header>
 
 <div class="container">
-    <div class="grid" id="videosGrid"></div>
+    <div id="videosGrid" class="grid"></div>
 </div>
 
 <script>
+// ID de la playlist de Aventura
 const playlistId = "PLmrN7pAkmKvkvMZ00RXSXV_llDSWti34Q";
+
 const rssUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`;
 const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
@@ -113,18 +103,12 @@ fetch(apiUrl)
     videos.forEach(video => {
         const vidId = video.link.split("v=")[1];
         html += `
-        <div class="card fade" onclick="window.open('https://www.youtube.com/watch?v=${vidId}')">
+        <div class="card" onclick="window.open('https://www.youtube.com/watch?v=${vidId}')">
             <img src="https://img.youtube.com/vi/${vidId}/hqdefault.jpg">
             <h3>${video.title}</h3>
         </div>`;
     });
     document.getElementById("videosGrid").innerHTML = html;
-
-    setTimeout(()=>{
-        document.querySelectorAll(".fade").forEach(el=>{
-            el.classList.add("show");
-        });
-    },100);
 });
 </script>
 
