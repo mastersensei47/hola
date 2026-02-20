@@ -3,120 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Categorías - MS47</title>
+<title>MS47 - Inicio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
 body{
-  background:#0e0e0e;
-  color:white;
-  padding:100px 20px 40px 20px;
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    background:#0f0f0f;
+    color:white;
 }
 
-h1{
-  text-align:center;
-  margin-bottom:40px;
-  font-size:30px;
+/* ====== BANNER ====== */
+.banner{
+    background:url("1366_2000.jpg") center/cover no-repeat;
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
 }
 
-/* GRID PRO */
+.banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+
+.banner h1{
+    position:relative;
+    font-size:60px;
+    font-weight:900;
+    color:#ff2e2e;
+    text-shadow:0 0 20px #ff0000;
+}
+
+/* ===== REDES ===== */
+.redes{
+    text-align:center;
+    margin:25px 0;
+}
+
+.redes a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+    background:#ff2e2e;
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.redes a:hover{
+    background:white;
+    color:#ff2e2e;
+}
+
+/* ===== CATEGORIAS ===== */
+.categorias{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.categorias h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:35px;
+}
+
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
-  gap:20px;
-  max-width:1200px;
-  margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .card{
-  background:#1b1b1b;
-  border-radius:10px;
-  overflow:hidden;
-  cursor:pointer;
-  transition:0.3s;
-  text-align:center;
-  padding:25px 15px;
+    background:#1c1c1c;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.4s;
+    text-align:center;
 }
 
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 20px black;
-}
-
-.icon{
-  font-size:40px;
-  margin-bottom:10px;
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
 }
 
 .card h3{
-  font-size:16px;
+    padding:15px;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #ff2e2e;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    margin-top:40px;
+    font-size:14px;
+    color:#aaa;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🎮 Categorías</h1>
-
-<div class="grid">
-
-  <div class="card" onclick="window.location.href='minecraft.html'">
-    <div class="icon">🧱</div>
-    <h3>Minecraft & Versiones</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='deportes.html'">
-    <div class="icon">⚽</div>
-    <h3>Deportes</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='aventura.html'">
-    <div class="icon">🗺</div>
-    <h3>Aventura</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='retro.html'">
-    <div class="icon">🕹</div>
-    <h3>Retro & Clásicos</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='online.html'">
-    <div class="icon">🌐</div>
-    <h3>Juegos Online</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='simuladores.html'">
-    <div class="icon">🚗</div>
-    <h3>Simulación</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='programas.html'">
-    <div class="icon">💻</div>
-    <h3>Programas & Utilidades</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='mundo-abierto.html'">
-    <div class="icon">🌍</div>
-    <h3>Mundo Abierto</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='terror.html'">
-    <div class="icon">👻</div>
-    <h3>Terror</h3>
-  </div>
-
-  <div class="card" onclick="window.location.href='dinosaurios.html'">
-    <div class="icon">🦖</div>
-    <h3>Dinosaurios</h3>
-  </div>
-
+<div class="banner">
+    <h1>mastersensei47</h1>
 </div>
+
+<div class="redes">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">YouTube</a>
+</div>
+
+<section class="categorias">
+    <h2>🎮 Categorías</h2>
+
+    <div class="grid">
+
+        <div class="card" onclick="location.href='Minecraft.html'">
+            <img src="minecraft.jpg">
+            <h3>Minecraft & Versiones</h3>
+        </div>
+
+        <div class="card" onclick="location.href='deportes.html'">
+            <img src="deportes.jpg">
+            <h3>Deportes</h3>
+        </div>
+
+        <div class="card" onclick="location.href='aventura.html'">
+            <img src="aventura.jpg">
+            <h3>Aventura</h3>
+        </div>
+
+        <div class="card" onclick="location.href='retro.html'">
+            <img src="retro.jpg">
+            <h3>Retro & Clásicos</h3>
+        </div>
+
+        <div class="card" onclick="location.href='online.html'">
+            <img src="online.jpg">
+            <h3>Juegos Online</h3>
+        </div>
+
+        <div class="card" onclick="location.href='simulacion.html'">
+            <img src="simulacion.jpg">
+            <h3>Simulación</h3>
+        </div>
+
+        <div class="card" onclick="location.href='programas.html'">
+            <img src="programas.jpg">
+            <h3>Programas & Utilidades</h3>
+        </div>
+
+        <div class="card" onclick="location.href='mundoabierto.html'">
+            <img src="mundo.jpg">
+            <h3>Mundo Abierto</h3>
+        </div>
+
+        <div class="card" onclick="location.href='terror.html'">
+            <img src="terror.jpg">
+            <h3>Terror</h3>
+        </div>
+
+        <div class="card" onclick="location.href='dinosaurios.html'">
+            <img src="dino.jpg">
+            <h3>Dinosaurios</h3>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+© 2026 mastersensei47 - Todos los derechos reservados
+</footer>
 
 </body>
 </html>
